@@ -1,0 +1,12 @@
+[
+  {
+    "latitude": 51.05,
+    "longitude": -0.72,
+    "model": "https://example.com/model.glb"
+  },
+  {
+    "latitude": 51.0505,
+    "longitude": -0.721,
+    "video": "https://example.com/video.mp4"
+  }
+]

@@ -19,3 +19,4 @@ A brief summary of each example follows below. Aside from `hello-world`, the maj
 - `peakfinder-2d` - shows the use of an OpenStreetMap based web API to download local summits. Does *not* include elevation though, hence the `2d`. Uses a working proxy.
 
 - `osm-ways` - shows how you can use AR.js to show not just simple point features but more complex geodata such as polylines. Downloads OpenStreetMap ways (roads, footpaths etc) from a server and renders them as polylines.
+- `json-places` - loads AR content from a local JSON file and generates entities for each place.
