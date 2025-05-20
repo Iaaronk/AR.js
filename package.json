@@ -10,6 +10,7 @@
     "build": "./node_modules/.bin/webpack --mode=production",
     "build:dev": "./node_modules/.bin/webpack --mode=development --progress --watch",
     "server": "npx http-server -c -1",
+    "serve": "node static-server.js",
     "prepare": "husky install"
   },
   "files": [

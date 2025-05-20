@@ -206,7 +206,19 @@ Important! Be aware that if you are referring to external resources, in any app,
 If you cannot do that, you can host a proxy anywhere server to solve that (https://github.com/Rob--W/cors-anywhere).
 Please note that several hosting services have policies that does not permit to use such server. Always check hosting services policies before using them to avoid account suspensions
 
+
 Learn more on the [AR.js Official Documentation](https://ar-js-org.github.io/AR.js-Docs/).
+
+## Local static server
+
+You can quickly serve the repository files (including GLTF models and videos) using the provided static server.
+This adds the `Access-Control-Allow-Origin` header so assets can be loaded without CORS issues.
+
+```bash
+npm run serve
+```
+
+The server listens on port `8080` by default. Set the `PORT` environment variable to change it.
 
 ## ES6 npm package
 
