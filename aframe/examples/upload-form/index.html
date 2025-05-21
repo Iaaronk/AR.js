@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Upload AR Content</title>
+        <link rel="stylesheet" href="../assets/index.css" />
+        <style>
+            form {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background: rgba(255, 255, 255, 0.9);
+                padding: 10px;
+                border-radius: 4px;
+                font-family: sans-serif;
+            }
+            #output {
+                white-space: pre-wrap;
+                background: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+                padding: 10px;
+                max-height: 40%;
+                overflow: auto;
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="uploadForm">
+            <label>
+                Select 3D model or video:
+                <input type="file" id="file" accept=".glb,.gltf,.fbx,.obj,.mp4,.webm,video/*,model/*" required />
+            </label>
+            <br />
+            <label>
+                Latitude:
+                <input type="number" step="any" id="lat" required />
+            </label>
+            <br />
+            <label>
+                Longitude:
+                <input type="number" step="any" id="lon" required />
+            </label>
+            <br />
+            <button type="submit">Submit</button>
+        </form>
+        <pre id="output"></pre>
+        <script>
+            const uploads = [];
+            const form = document.getElementById('uploadForm');
+            const output = document.getElementById('output');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const fileInput = document.getElementById('file');
+                const lat = parseFloat(document.getElementById('lat').value);
+                const lon = parseFloat(document.getElementById('lon').value);
+                const file = fileInput.files[0];
+                if (!file) {
+                    alert('Please select a file.');
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    uploads.push({
+                        name: file.name,
+                        type: file.type,
+                        dataUrl: event.target.result,
+                        latitude: lat,
+                        longitude: lon,
+                    });
+                    output.textContent = JSON.stringify(uploads, null, 2);
+                    form.reset();
+                };
+                reader.readAsDataURL(file);
+            });
+        </script>
+    </body>
+</html>
