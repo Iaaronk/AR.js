@@ -233,6 +233,8 @@ npm install @ar-js-org/ar.js
 yarn add @ar-js-org/ar.js
 ```
 For some examples read this [issue](https://github.com/AR-js-org/AR.js/issues/234).
+You can also try the **Media Dashboard** example located at `aframe/examples/dashboard/index.html`
+to manage media files linked to markers or locations.
 ## Troubleshooting, feature requests, community
 
 **You can find a lot of help on the old [AR.js repositories issues](https://github.com/jeromeetienne/AR.js/issues). Please search on open/closed issues, you may find interesting stuff.**
